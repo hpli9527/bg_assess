@@ -41,8 +41,6 @@ Rscript.exe ./plot_bg.R -c ./chromosome_length.txt -m ./S8722_2.bg_estimate.txt 
 |C09|20792390|26689228|#66ff33|
 |...|...|...|...|
 ## 结果示例
-![S8722_2](https://user-images.githubusercontent.com/35584208/125244766-491d9200-e322-11eb-8e3f-02318beddd5a.png)
-![S8722_2 bg_plot](https://user-images.githubusercontent.com/35584208/125244786-4fac0980-e322-11eb-9b5d-9f1c007bef00.png)
-![S8722_2 bg_plot2](https://user-images.githubusercontent.com/35584208/125244801-53d82700-e322-11eb-91eb-8a1ba9051495.png)
-
-
+<img src="https://user-images.githubusercontent.com/35584208/125244766-491d9200-e322-11eb-8e3f-02318beddd5a.png" width = "400" alt="S8722_2" />
+<img src="https://user-images.githubusercontent.com/35584208/125244786-4fac0980-e322-11eb-9b5d-9f1c007bef00.png" width = "400" alt="S8722_2 bg_plot1" />
+<img src="https://user-images.githubusercontent.com/35584208/125244801-53d82700-e322-11eb-91eb-8a1ba9051495.png" width = "400" alt="S8722_2 bg_plot2" />
