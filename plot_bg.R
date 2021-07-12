@@ -26,7 +26,9 @@ marker <- read_tsv(argv$marker) %>%
   select(CHROM = chr, POS = mid, VALUE = sum)
 
 # 导入片段位置
-fragment <- read_tsv(argv$region)
+if (exists("argv$region")) {
+  fragment <- read_tsv(argv$region)
+}
 
 test <- FALSE
 if (test) {
@@ -55,7 +57,7 @@ for(i in 1:nrow(chr)){
   # 画染色体
   rect(xleft = 0, ybottom = -3*i+1, xright = chr$LEN[i], ytop = -3*i+3 , col = "grey", lwd = 2)
 
-  if (exists("fragment")) {
+  if (exists("argv$region")) {
     # 画标记
     marker_sub <- marker[marker$CHROM==chr$CHROM[i], ]
     for (j in 1:nrow(marker_sub)) {
