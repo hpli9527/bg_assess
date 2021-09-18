@@ -26,17 +26,18 @@ marker <- read_tsv(argv$marker) %>%
   select(CHROM = chr, POS = mid, VALUE = sum)
 
 # 导入片段位置
-if (exists("argv$region")) {
-  fragment <- read_tsv(argv$region)
+fragment_file <- argv$region
+if (exists("fragment_file")) {
+  fragment <- read_tsv(fragment_file)
 }
 
 test <- FALSE
 if (test) {
   chr <- read_tsv("./chromosome_length.txt")
-  marker <- read_tsv("./S195G_1.bg_estimate.txt") %>%
+  marker <- read_tsv("./WS100.bg_estimate.txt") %>%
     select(CHROM = chr, POS = mid, VALUE = sum)
-  fragment <- read_tsv("./S195G_1.region.txt")
-  argv$output <- "S195G_1.bg_plot"
+  fragment <- read_tsv("./WS100.region.txt")
+  argv$output <- "WS100.region.txt"
 }
 
 # 定义标记颜色梯度
@@ -57,7 +58,7 @@ for(i in 1:nrow(chr)){
   # 画染色体
   rect(xleft = 0, ybottom = -3*i+1, xright = chr$LEN[i], ytop = -3*i+3 , col = "grey", lwd = 2)
 
-  if (exists("argv$region")) {
+  if (exists("fragment")) {
     # 画标记
     marker_sub <- marker[marker$CHROM==chr$CHROM[i], ]
     for (j in 1:nrow(marker_sub)) {
